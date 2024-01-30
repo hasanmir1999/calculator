@@ -40,3 +40,25 @@ function Equal(equation){
         display.value = 'ERROR'
     }
 }
+
+// mobile
+
+for(let button of buttons){
+    button.addEventListener('touchstart',()=>{
+        if(button.innerHTML != 'AC' && button.innerHTML != 'DE'){
+            display.value += button.innerHTML;
+            console.log(display.value)
+            if(button.innerHTML == '='){
+                Equal(display.value = display.value.replace('=',''));
+            }
+        }
+        else{
+            if(button.innerHTML == 'AC'){
+                clearAll()
+            }
+            else{
+                clearOne()
+            }
+        }
+    })
+}
